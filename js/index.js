@@ -75,10 +75,15 @@ const images = [
         create.innerHTML = `</li><img src="${elem.preview}" alt="${elem.description}" data-source="${elem.original}" height="${a}" width="${b}"></li>`
     });
 
-  
+   
+    
 
     photo.addEventListener('click', (evt) => {
         console.log(evt.target.dataset.source);
+        const instance = basicLightbox.create(`
+            <img src="${evt.target.dataset.source}" width="1280" height="600">
+        `)
+        
         instance.show()
     })
 
